@@ -1,0 +1,6 @@
+ext {
+    jdkVer = JavaVersion.VERSION_1_8
+
+    libVersionCode = 1
+    libVersionName = '1.0.0'
+}

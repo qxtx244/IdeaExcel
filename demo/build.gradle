@@ -1,0 +1,40 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion compileSdkVer
+    defaultConfig {
+        applicationId "com.qxtx.idea.IdeaExcel"
+        minSdkVersion minSdkVer
+        targetSdkVersion targetSdkVer
+        versionCode appVersionCode
+        versionName appVersionName
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility jdkVer
+        targetCompatibility jdkVer
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.android.support:appcompat-v7:" + appcompat_v7
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation project(path: ':ideaexcel')
+}
+
+repositories {
+    google()
+    mavenCentral()
+    jcenter{url "http://jcenter.bintray.com/"}
+}
